@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Trendo">
+    <title>Trendo</title>
+    <link rel="stylesheet" href="./output.css">
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+<style>
+    .swiper-button-prev::after {
+        content: ""; 
+}
+.swiper-button-next::after {
+        content: ""; 
+}
+
+</style>
+</head>
+<body>
+    <!-- Start Navbar -->
+        <div x-data="{ sidebarOpen: false }">
+            <nav class="bg-white container mx-auto w-full z-20 top-0 start-0">
+            <div class="flex flex-wrap items-center justify-between mx-auto p-4">
+                <div class="flex items-end gap-12">
+                <!-- Logo -->
+                <a href="./index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+                    <span class="self-center text-[#0F172A] text-[32px] font-bold whitespace-nowrap dark:text-white">Trendo</span>
+                </a>
+        
+                <!-- Items -->
+                <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+                    <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                    <li><a href="#" class="block py-2 px-3 text-[#0F172A] rounded text-base font-medium leading-6">Products</a></li>
+                    <li><a href="#" class="block py-2 px-3 text-[#0F172A] rounded text-base font-medium leading-6">Solutions</a></li>
+                    <li>
+                        <div x-data="{ open: false }" class="relative">
+                        <button id="dropdownNavbarLink" @click="open = !open" class="flex items-center justify-between w-full py-2 px-3 text-[#0F172A] text-base leading-6 rounded">
+                            Resources
+                            <svg class="w-2.5 h-2.5 ms-2.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                            </svg>
+                        </button>
+                        <!-- Dropdown menu -->
+                        <div id="dropdownNavbar" x-show="open" @click.away="open = false" class="absolute z-10 mt-2 font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44" x-cloak>
+                            <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownNavbarLink">
+                            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a></li>
+                            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a></li>
+                            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a></li>
+                            </ul>
+                            <div class="py-1">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
+                            </div>
+                        </div>
+                        </div>
+                    </li>
+                    </ul>
+                </div>
+                </div>
+        
+                <!-- Sidebar Toggle Button -->
+                <div class="sm:hidden flex order-1 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                <button type="button" @click="sidebarOpen = true">
+                    <img src="./images/burger-menu-right-svgrepo-com.svg" class="w-6 h-6" alt="Menu">
+                </button>
+                </div>
+
+                <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                    <button class="w-[125px] h-12 text-[#0F172A] bg-white border-2 border-[#0F172A] focus:ring-0 focus:outline-none font-medium rounded-lg text-base leading-6 px-4 py-2 text-center">Voit Now</button>
+                </div>
+            </div>
+            </nav>
+        
+            <!-- Sidebar -->
+            <div 
+            class="fixed inset-y-0 ltr:start-0 rtl:end-0 w-64 bg-white shadow-lg z-30 transform -translate-x-full transition-transform duration-300 ease-in-out"
+            :class="{ '-translate-x-full': !sidebarOpen }">
+            <div class="p-4">
+                <button @click="sidebarOpen = false">
+                    <img src="./images/closeIcon.svg" alt="closeIcon" class="relative ltr:left-[200px]">
+                </button>
+                <ul class="mt-6 space-y-4">
+                <li><a href="#" class="block  text-[#0F172A] text-base leading-6 rounded">Products</a></li>
+                <li><a href="#" class="block  text-[#0F172A] text-base leading-6 rounded">Solutions</a></li>
+                <li><div x-data="{ open: false }" class="relative">
+                    <button id="dropdownNavbarLink" @click="open = !open" class="flex items-center justify-between w-full  text-[#0F172A] text-base leading-6 rounded">
+                        Resources
+                        <svg class="w-2.5 h-2.5 ms-2.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                        </svg>
+                    </button>
+                    <!-- Dropdown menu -->
+                    <div id="dropdownNavbar" x-show="open" @click.away="open = false" class="absolute z-10 mt-2 font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44" x-cloak>
+                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownNavbarLink">
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a></li>
+                        </ul>
+                        <div class="py-1">
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
+                        </div>
+                    </div>
+                    </div></li>
+                </ul>
+            </div>
+            </div>
+        </div>
+    <!-- End Navbar -->
+
+    <!-- Start Header Section -->
+        <header class="container mx-auto flex xl:flex-row flex-col p-5 xl:p-0">
+            <div class=" mt-[90px]">
+                <h1 class="text-[#0F172A] font-bold md:text-7xl text-4xl md:leading-[79.2px] leading-[50px] md:w-[690px]">2025 Best Influencers in Egypt</h1>
+                <p class="text-[#0F172A] text-2xl font-normal leading-[38.4px] lg:w-[575.4px] mt-8">Amet nunc diam orci duis ut sit diam arcu, nec. Eleifend proin massa tincidunt viverra lectus pulvinar. Nunc ipsum est pellentesque turpis ultricies.</p>
+                <div class="flex items-baseline gap-8">
+                    <a href="#" class="flex items-center justify-center w-[204px] h-16 bg-[#EA580C] rounded-lg mt-8">
+                        <button class="text-white text-2xl font-bold leading-6">Vote Now</button>
+                    </a>
+
+                    <a href="#" class="flex gap-4">
+                        <img src="./images/play-circle.svg" class="w-6 h-6 translate ltr:scale-x-100 rtl:scale-x-[-1]" alt="Circle">
+                        <p class="text-[#2563EB] text-[20px] font-medium leading-6">View Demo</p>
+                    </a>
+                </div>
+                <div class="mt-[80px] flex md:flex-row flex-col gap-12">
+                    <p class="text-[#475569] text-base font-normal leading-[22.4px]">Trusted by <br>leading companies</p>
+                    <div class="flex gap-12">
+                        <img src="./images/fIcon.svg" alt="Icon">
+                        <img src="./images/sIcon.svg" alt="Icon">
+                        <img src="./images/tIcon.svg" alt="Icon">
+                        <img src="./images/foIcon.svg" alt="Icon">
+                        <img src="./images/fiIcon.svg" alt="Icon">
+                    </div>
+                </div>
+            </div>
+            <img src="./images/header.webp" class="sm:flex hidden w-[624.6px] h-[544.53px] mt-20" alt="Header Image">
+        </header>
+    <!-- End Header Section -->
+
+    <!-- Start Top Partners -->
+        <section class="bg-[#F1F5F9] w-full lg:h-[479px] py-20 mt-[90px]">
+            <div class="container mx-auto flex flex-col items-center justify-center">
+                <h1 class="text-[#0F172A] md:text-[56px] text-4xl leading-[61.6px] font-extrabold">Our Top Partners</h1>
+                <div class="grid grid-cols-2 lg:grid-cols-8 md:grid-cols-4 gap-10 md:mt-20 mt-5">
+                    <img src="./images/Logo-colored.webp" alt="Image">
+                    <img src="./images/radioShack.webp" alt="Image">
+                    <img src="./images/mazaya.webp" alt="Image">
+                    <img src="./images/astorm.webp" alt="Image">
+                    <img src="./images/cicio.webp" alt="Image">
+                    <img src="./images/weavy.webp" alt="Image">
+                    <img src="./images/vRocket.webp" alt="Image">
+                    <img src="./images/vie.webp" alt="Image">
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-10 md:mt-20 mt-10">
+                    <img src="./images/metablu.webp" alt="Image">
+                    <img src="./images/buildaa.webp" alt="Image">
+                    <img src="./images/hapi.webp" alt="Image">
+                    <img src="./images/LogoIpsum.webp" alt="Image">
+                    <img src="./images/vitruo.webp" alt="Image">
+                </div>
+            </div>
+        </section>
+    <!-- End Top Partners -->
+
+    <!-- Start Contenet -->
+        <section class="container mx-auto flex flex-col items-center justify-center my-20 p-5 xl:p-0">
+            <!-- <div class="flex items-end justify-center">
+                <img src="./images/RightPicture.png" class="w-[200px] h-[250px]" alt="Picture">
+                <img src="./images/sRightPicture.png" class="w-[200px] h-[360px]" alt="Picture">
+                <img src="./images/middlePicture.png" class="w-[200px] h-[560px]" alt="Picture">
+                <img src="./images/sRightPicture.png" class="w-[200px] h-[360px]" alt="Picture">
+                <img src="./images/RightPicture.png" class="w-[200px] h-[250px]" alt="Picture">
+            </div> -->
+            <h1 class="text-[#0F172A] lg:text-[56px] text-4xl font-extrabold leading-[61.6px] mt-20">Meet international students & teachers</h1>
+            <p class="text-[#0F172A] text-[20px] font-normal leading-9 text-center mt-8">Morbi sit egestas dignissim pharetra, sed amet. Tempus justo senectus risus ac vel, velit, nunc. Eget commodo eget in aliquam facilisi facilisi br nec magna hendrerit. Placerat ipsum sit tellus urna, faucibus aenean lorem faucibus integer.</p>
+            <a href="#" class="flex items-center gap-4 mt-8">
+                <p class="text-[#2563EB] text-[20px] font-medium leading-6">Explore teachers and students</p>
+                <img src="./images/arrow-right.svg" class="translate ltr:scale-x-100 rtl:scale-x-[-1]" alt="Arrow">
+            </a>
+        </section>
+    <!-- End Contenet -->
+
+    <!-- Start Statics -->
+        <section class="bg-[#0F172A] lg:h-[373px] flex md:p-5 lg:p-0">
+            <div class="container mx-auto flex md:flex-row flex-col items-center justify-center gap-20">
+                <div class="flex flex-col items-center gap-4 w-[373px]">
+                    <img src="./images/heart.svg" class="w-16 h-16" alt="Heart Icon">
+                    <h1 class="text-[#FACC15] text-7xl font-extrabold leading-[79.2px]">195</h1>
+                    <p class="text-[#FACC15] text-2xl font-normal leading-[38.4px]">user countries</p>
+                </div>
+                <div class="flex flex-col items-center gap-4 w-[373px]">
+                    <img src="./images/valued.svg" class="w-16 h-16" alt="Icon">
+                    <h1 class="text-[#FACC15] text-7xl font-extrabold leading-[79.2px]">1M</h1>
+                    <p class="text-[#FACC15] text-2xl font-normal leading-[38.4px]">valued teachers</p>
+                </div>
+                <div class="flex flex-col items-center gap-4 w-[373px]">
+                    <img src="./images/happy.svg" class="w-16 h-16" alt="Icon">
+                    <h1 class="text-[#FACC15] text-7xl font-extrabold leading-[79.2px]">17M</h1>
+                    <p class="text-[#FACC15] text-2xl font-normal leading-[38.4px]">happy students</p>
+                </div>
+            </div>
+        </section>
+    <!-- End Statics -->
+
+    <!-- Start Reviews -->
+        <section class="container mx-auto py-20">
+            <div class="relative">
+                <div class="flex justify-between">
+                    <h1 class="text-[#0F172A] md:text-[56px] text-4xl font-extrabold leading-[61.6px]">What everyone says</h1>
+                    <div class="flex gap-6">
+                        <a href="#" class="absolute swiper-button-prev w-12 h-12 top-0 ltr:left-[92%] flex items-center justify-center border-2 border-[#EA580C] rounded-full">
+                            <img src="./images/arrow-left.svg" alt="Arrow">
+                        </a>
+                        <a href="#" class="flex items-center justify-center border-2 border-[#EA580C] w-12 h-12 top-0 rtl:right-[92%] rounded-full swiper-button-next">
+                            <img src="./images/orangearrow-right.svg" alt="Arrow">
+                        </a>
+                    </div>
+                </div>
+                <div class="mt-20">
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+
+                        <div class="swiper-slide">
+                            <div class="bg-white rounded-[20px]  w-[412px] h-[305px]" style="box-shadow: 0px 0px 6px #00000012, 0px 10px 15px -3px #0000001A; border-radius: 20px;">
+                            <p class="text-black text-lg pt-8 px-8 pb-4">
+                                Lacus vestibulum ultricies mi risus, duis non, volutpat nullam non. Magna congue nisi maecenas elit aliquet eu sed consectetur. Vitae quis cras vitae praesent morbi adipiscing purus consectetur mi.</p>
+                            <div class="flex items-center gap-4 px-8 pt-4">
+                                <img src="./images/UserThumb.webp" alt="User" class="w-16 h-16 rounded-full">
+                                <div>
+                                <h4 class="text-black font-normal text-lg leading-[28.8px]">Helen Jimmy</h4>
+                                <span class="text-[#475569] text-base font-normal leading-[24.4px]">Financial Counselor</span>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="bg-white rounded-[20px]  w-[412px] h-[305px]" style="box-shadow: 0px 0px 6px #00000012, 0px 10px 15px -3px #0000001A; border-radius: 20px;">
+                            <p class="text-black text-lg pt-8 px-8 pb-4">
+                                Lacus vestibulum ultricies mi risus, duis non, volutpat nullam non. Magna congue nisi maecenas elit aliquet eu sed consectetur. Vitae quis cras vitae praesent morbi adipiscing purus consectetur mi.</p>
+                            <div class="flex items-center gap-4 px-8 pt-4">
+                                <img src="./images/UserThumb.webp" alt="User" class="w-16 h-16 rounded-full">
+                                <div>
+                                <h4 class="text-black font-normal text-lg leading-[28.8px]">Helen Jimmy</h4>
+                                <span class="text-[#475569] text-base font-normal leading-[24.4px]">Financial Counselor</span>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="bg-white rounded-[20px]  w-[412px] h-[305px]" style="box-shadow: 0px 0px 6px #00000012, 0px 10px 15px -3px #0000001A; border-radius: 20px;">
+                            <p class="text-black text-lg pt-8 px-8 pb-4">
+                                Lacus vestibulum ultricies mi risus, duis non, volutpat nullam non. Magna congue nisi maecenas elit aliquet eu sed consectetur. Vitae quis cras vitae praesent morbi adipiscing purus consectetur mi.</p>
+                            <div class="flex items-center gap-4 px-8 pt-4">
+                                <img src="./images/UserThumb.webp" alt="User" class="w-16 h-16 rounded-full">
+                                <div>
+                                <h4 class="text-black font-normal text-lg leading-[28.8px]">Helen Jimmy</h4>
+                                <span class="text-[#475569] text-base font-normal leading-[24.4px]">Financial Counselor</span>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="bg-white rounded-[20px]  w-[412px] h-[305px]" style="box-shadow: 0px 0px 6px #00000012, 0px 10px 15px -3px #0000001A; border-radius: 20px;">
+                            <p class="text-black text-lg pt-8 px-8 pb-4">
+                                Lacus vestibulum ultricies mi risus, duis non, volutpat nullam non. Magna congue nisi maecenas elit aliquet eu sed consectetur. Vitae quis cras vitae praesent morbi adipiscing purus consectetur mi.</p>
+                            <div class="flex items-center gap-4 px-8 pt-4">
+                                <img src="./images/UserThumb.webp" alt="User" class="w-16 h-16 rounded-full">
+                                <div>
+                                <h4 class="text-black font-normal text-lg leading-[28.8px]">Helen Jimmy</h4>
+                                <span class="text-[#475569] text-base font-normal leading-[24.4px]">Financial Counselor</span>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="bg-white rounded-[20px]  w-[412px] h-[305px]" style="box-shadow: 0px 0px 6px #00000012, 0px 10px 15px -3px #0000001A; border-radius: 20px;">
+                            <p class="text-black text-lg pt-8 px-8 pb-4">
+                                Lacus vestibulum ultricies mi risus, duis non, volutpat nullam non. Magna congue nisi maecenas elit aliquet eu sed consectetur. Vitae quis cras vitae praesent morbi adipiscing purus consectetur mi.</p>
+                            <div class="flex items-center gap-4 px-8 pt-4">
+                                <img src="./images/UserThumb.webp" alt="User" class="w-16 h-16 rounded-full">
+                                <div>
+                                <h4 class="text-black font-normal text-lg leading-[28.8px]">Helen Jimmy</h4>
+                                <span class="text-[#475569] text-base font-normal leading-[24.4px]">Financial Counselor</span>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="bg-white rounded-[20px]  w-[412px] h-[305px]" style="box-shadow: 0px 0px 6px #00000012, 0px 10px 15px -3px #0000001A; border-radius: 20px;">
+                            <p class="text-black text-lg pt-8 px-8 pb-4">
+                                Lacus vestibulum ultricies mi risus, duis non, volutpat nullam non. Magna congue nisi maecenas elit aliquet eu sed consectetur. Vitae quis cras vitae praesent morbi adipiscing purus consectetur mi.</p>
+                            <div class="flex items-center gap-4 px-8 pt-4">
+                                <img src="./images/UserThumb.webp" alt="User" class="w-16 h-16 rounded-full">
+                                <div>
+                                <h4 class="text-black font-normal text-lg leading-[28.8px]">Helen Jimmy</h4>
+                                <span class="text-[#475569] text-base font-normal leading-[24.4px]">Financial Counselor</span>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <!-- End Reviews -->
+
+    <!-- Swiper Initialization Script -->
+    <script>
+        const swiper = new Swiper('.swiper', {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+            640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+            },
+            1024: {
+            slidesPerView: 3.1,
+            spaceBetween: -60,
+            },
+        },
+        });
+    </script>
+</body>
+</html>
