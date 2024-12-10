@@ -10,7 +10,15 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Roboto Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
 <style>
+    body {
+            font-family: "Roboto", sans-serif;
+        }
     .swiper-button-prev::after {
         content: ""; 
 }
@@ -69,7 +77,7 @@
                 </div>
 
                 <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-                    <button class="w-[125px] h-12 text-[#0F172A] bg-white border-2 border-[#0F172A] focus:ring-0 focus:outline-none font-medium rounded-lg text-base leading-6 px-4 py-2 text-center">Voit Now</button>
+                    <a href="./join.html" class="flex items-center justify-center w-[125px] h-12 text-[#0F172A] bg-white border-2 border-[#0F172A] focus:ring-0 focus:outline-none font-medium rounded-lg text-base leading-6 px-4 py-2 text-center">Voit Now</a>
                 </div>
             </div>
             </nav>
@@ -207,7 +215,7 @@
     <!-- End Statics -->
 
     <!-- Start Reviews -->
-        <section class="container mx-auto py-20">
+        <section class="container mx-auto md:py-20">
             <div class="relative">
                 <div class="flex md:justify-between justify-center">
                     <h1 class="text-[#0F172A] md:text-[56px] text-4xl font-extrabold leading-[61.6px]">What everyone says</h1>
@@ -315,6 +323,189 @@
             </div>
         </section>
     <!-- End Reviews -->
+
+    <!-- Start Categories -->
+        <section class="container mx-auto flex xl:flex-row flex-col items-center justify-between p-5 lg:p-0">
+            <div>
+                <h1 class="text-[#0F172A] md:text-[56px] text-3xl font-extrabold leading-[61.6px]">All Influencers Categories</h1>
+                <p class="md:w-[600px] text-[#0F172A] text-[20px] font-normal leading-9 mt-8">Mauris consequat, cursus pharetra et, habitasse rhoncus quis odio ac. In et dolor eu donec maecenas nulla. Cum sed orci, sit pellentesque quisque feugiat cras ullamcorper. Ultrices in amet, ullamcorper non viverra a, neque orci.</p>
+                <a href="#" class="flex items-center gap-4 mt-8">
+                    <p class="text-[#2563EB] text-[20px] font-medium leading-6">View all the features</p>
+                    <img src="./images/arrow-right.svg" class="translate ltr:scale-x-100 rtl:scale-x-[-1]" alt="Arrow">
+                </a>
+            </div>
+            <img src="./images/Right.webp" alt="Image">
+        </section>
+    <!-- End Categories -->
+
+    <!-- Start Footer -->
+        <footer class="bg-[#0F172A] md:h-[414px]">
+            <div class="container mx-auto flex flex-col md:flex-row lg:gap-3 py-12 px-5 sm:px-0">
+
+            <div class="md:pt-8 mb-5">
+                <div class="flex justify-start items-center gap-2">
+                    <img class="" src="./images/footer.svg"  alt="Footer Logo" />
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-5 grid-cols-2 xl:gap-36 lg:gap-16">
+                <div class="flex-col justify-start items-start gap-3">
+                    <h2 class="text-white text-base font-medium  leading-[17.6px]">Product</h2>
+                    <div class="flex-col justify-start items-start mt-3">
+                    <div class="py-1.5 flex items-center gap-3 group  "> 
+                        <div> 
+                            <a class="text-[#E2E8F0] text-base cursor-pointer">Pricing</a>
+                        </div>
+                    </div>
+                    <div class="py-1.5 flex items-center gap-2 group  "> 
+                        <div> 
+                            <a class="text-[#E2E8F0] text-base cursor-pointer">Overview</a>
+                        </div>
+                    </div>
+                    <div class="py-1.5 flex items-center gap-2 group  "> 
+                        <div> 
+                            <a class="text-[#E2E8F0] text-base cursor-pointer">Browse</a>
+                        </div>
+                    </div>
+                    <div class="py-1.5 flex items-center gap-2 group  "> 
+                        <div>
+                            <a class=" text-[#E2E8F0] text-base cursor-pointer ">Accessibility</a>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="flex-col justify-start items-start gap-3">
+                    <h2 class="text-white text-base font-medium  leading-[17.6px]">Solutions</h2>
+                    <div class="flex-col justify-start items-start mt-3">
+                    <div class="py-1.5 flex items-center gap-3 group  "> 
+                        <div> 
+                            <a class="text-[#E2E8F0] text-base cursor-pointer">Brainstorming</a>
+                        </div>
+                    </div>
+                    <div class="py-1.5 flex items-center gap-2 group  "> 
+                        <div> 
+                            <a class="text-[#E2E8F0] text-base cursor-pointer">Ideation</a>
+                        </div>
+                    </div>
+                    <div class="py-1.5 flex items-center gap-2 group  "> 
+                        <div> 
+                            <a class="text-[#E2E8F0] text-base cursor-pointer">Wireframing</a>
+                        </div>
+                    </div>
+                    <div class="py-1.5 flex items-center gap-2 group  "> 
+                        <div>
+                            <a class=" text-[#E2E8F0] text-base cursor-pointer ">Research</a>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="flex-col justify-start items-start gap-3">
+                    <h2 class="text-white text-base font-medium  leading-[17.6px]">Resources</h2>
+                    <div class="flex-col justify-start items-start mt-3">
+                    <div class="py-1.5 flex items-center gap-3 group  "> 
+                        <div> 
+                            <a class="text-[#E2E8F0] text-base cursor-pointer">Help Center</a>
+                        </div>
+                    </div>
+                    <div class="py-1.5 flex items-center gap-2 group  "> 
+                        <div> 
+                            <a class="text-[#E2E8F0] text-base cursor-pointer">Blogs</a>
+                        </div>
+                    </div>
+                    <div class="py-1.5 flex items-center gap-2 group  "> 
+                        <div> 
+                            <a class="text-[#E2E8F0] text-base cursor-pointer">Tutorials</a>
+                        </div>
+                    </div>
+                    <div class="py-1.5 flex items-center gap-2 group  "> 
+                        <div>
+                            <a class=" text-[#E2E8F0] text-base cursor-pointer ">FAQs</a>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="flex-col justify-start items-start gap-3">
+                    <h2 class="text-white text-base font-medium  leading-[17.6px]">Support</h2>
+                    <div class="flex-col justify-start items-start mt-3">
+                    <div class="py-1.5 flex items-center gap-3 group  "> 
+                        <div> 
+                            <a class="text-[#E2E8F0] text-base cursor-pointer">Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="py-1.5 flex items-center gap-2 group  "> 
+                        <div> 
+                            <a class="text-[#E2E8F0] text-base cursor-pointer">Developers</a>
+                        </div>
+                    </div>
+                    <div class="py-1.5 flex items-center gap-2 group  "> 
+                        <div> 
+                            <a class="text-[#E2E8F0] text-base cursor-pointer">Documentation</a>
+                        </div>
+                    </div>
+                    <div class="py-1.5 flex items-center gap-2 group  "> 
+                        <div>
+                            <a class=" text-[#E2E8F0] text-base cursor-pointer ">Integrations</a>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="flex-col justify-start items-start gap-3">
+                    <h2 class="text-white text-base font-medium  leading-[17.6px]">Company</h2>
+                    <div class="flex-col justify-start items-start mt-3">
+                    <div class="py-1.5 flex items-center gap-3 group  "> 
+                        <div> 
+                            <a class="text-[#E2E8F0] text-base cursor-pointer">About</a>
+                        </div>
+                    </div>
+                    <div class="py-1.5 flex items-center gap-2 group  "> 
+                        <div> 
+                            <a class="text-[#E2E8F0] text-base cursor-pointer">Press</a>
+                        </div>
+                    </div>
+                    <div class="py-1.5 flex items-center gap-2 group  "> 
+                        <div> 
+                            <a class="text-[#E2E8F0] text-base cursor-pointer">Events</a>
+                        </div>
+                    </div>
+                    <div class="py-1.5 flex items-center gap-2 group  "> 
+                        <div>
+                            <a class=" text-[#E2E8F0] text-base cursor-pointer ">Request Demo</a>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+            <hr class="container mx-auto md:mt-14" style="border-color: rgb(112, 111, 111);">
+            <div class="container mx-auto flex md:flex-row flex-col justify-between md:mt-[34px] p-5 sm:p-0">
+                <div>
+                    <p class="text-[#E2E8F0] text-base font-normal leading-[22.4px] mb-2 md:mb-0">uteach @ 2023. All rights reserved.</p>
+                </div>
+                <div class="flex md:gap-8 gap-4">
+                    <a href="#" class="text-[#E2E8F0] text-base font-normal leading-[22.4px]">Terms</a>
+                    <a href="#" class="text-[#E2E8F0] text-base font-normal leading-[22.4px]">Privacy</a>
+                    <a href="#" class="text-[#E2E8F0] text-base font-normal leading-[22.4px]">Contact</a>
+                    <p class="flex gap-1 cursor-pointer">
+                        <img src="./images/world.svg" class="w-6 h-6" alt="language">
+                        <span class="text-[#E2E8F0] text-base font-normal leading-[22.4px] uppercase">en</span>
+                    </p>
+                    <p class="flex gap-1 cursor-pointer">
+                        <img src="./images/euro.svg" class="w-6 h-6" alt="Euro">
+                        <span class="text-[#E2E8F0] text-base font-normal leading-[22.4px] uppercase">eur</span>
+                    </p>
+                    <p class="flex gap-1 cursor-pointer">
+                        <img src="./images/accessibility.svg" class="w-6 h-6" alt="Link">
+                    </p>
+                    
+                </div>
+            </div>
+        </footer>
+    <!-- End Footer -->
 
     <!-- Swiper Initialization Script -->
     <script>
