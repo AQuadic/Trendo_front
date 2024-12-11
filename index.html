@@ -16,6 +16,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 
 <style>
+    html {
+        scroll-behavior: smooth;
+    }
     body {
             font-family: "Roboto", sans-serif;
         }
@@ -53,7 +56,7 @@
                             </svg>
                         </button>
                         <!-- Dropdown menu -->
-                        <div id="dropdownNavbar" x-show="open" @click.away="open = false" class="absolute z-10 mt-2 font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44" x-cloak>
+                        <div id="dropdownNavbar" x-show="open" @click.away="open = false" class="absolute z-20 mt-2 font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44" x-cloak>
                             <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownNavbarLink">
                             <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a></li>
                             <li><a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a></li>
