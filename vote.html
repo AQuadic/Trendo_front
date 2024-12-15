@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Trendo">
+    <title>Vote</title>
+    <link rel="stylesheet" href="./output.css">
+    <!-- Outfit Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+
+</head>
+<body class="flex items-center justify-center min-h-[100vh] bg-black">
+
+    <div x-data="{ currentPage: 'intro' }">
+        <!-- Intro Section -->
+        <section x-show="currentPage === 'intro'" class="container m-auto bg-[#2D93A9] w-[390px] h-[844px] rounded-[55px] relative">
+            <p class="text-[#FFFFFF] text-lg font-medium leading-[22.68px] absolute right-4 top-8 cursor-pointer font-Outfit">Skip</p>
+            <img src="./images/3dicons.webp" class="w-[60px] h-[62px] absolute top-10 left-32" alt="Heart">
+            <img src="./images/Groupp.webp" class="w-[265px] h-[268px] absolute top-24 left-10" alt="Group">
+            <div class="absolute top-[450px] left-10">
+                <h1 class="text-[51px] leading-[51px] font-bold text-white">Vote your <br> Influencer </h1>
+                <p class="text-white text-lg font-normal leading-[22.68px] mt-11 font-Outfit"> with our community you can find your <br> perfect dating partner</p>
+            </div>
+            <button @click="currentPage = 'interests'" class="flex items-center justify-around w-[350px] h-[73px] bg-[#1E212D] absolute top-[650px] left-5 rounded-[44px] mt-[85px]">
+                <p class="text-[28px] font-normal leading-[35.28px] text-white font-Outfit">Continue</p>
+                <img src="./images/Arrow.svg" class="w-10 translate ltr:scale-x-100 rtl:scale-x-[-1]" alt="Arrow">
+            </button>
+        </section>
+    
+        <!-- Interests Section -->
+        <section x-show="currentPage === 'interests'" class="container m-auto bg-[#2D93A9] w-[390px] h-[844px] rounded-[55px] relative">
+            <a  @click="currentPage = 'intro'" class="absolute left-4 top-8 cursor-pointer">
+                <img src="./images/Frame.svg" alt="Arrow">
+            </a>
+            <div class="absolute top-24 left-4">
+                <h1 class="text-[51px] leading-[51px] font-bold text-white">Your Interests</h1>
+                <p class="text-white text-lg font-normal leading-[22.68px] mt-5 font-Outfit">
+                    Select a few of your interests and let everyone know what you’re passionate about.
+                </p>
+                <div class="mt-[70px] flex flex-wrap gap-5">
+                    <p class="bg-[#D9D9D9] w-[98px] h-10 flex justify-center items-center cursor-pointer rounded-lg">
+                        <span class="text-[#1F1F1F] text-sm font-normal leading-[17.64px] font-Outifit">Photography</span>
+                    </p>
+                    <p class="bg-[#D9D9D9] w-[75px] h-10 flex justify-center items-center cursor-pointer rounded-lg">
+                        <span class="text-[#1F1F1F] text-sm font-normal leading-[17.64px] font-Outifit">Shopping</span>
+                    </p>
+                    <p class="bg-[#D9D9D9] w-[69px] h-10 flex justify-center items-center cursor-pointer rounded-lg">
+                        <span class="text-[#1F1F1F] text-sm font-normal leading-[17.64px] font-Outifit">Karaoke</span>
+                    </p>
+                    <p class="bg-[#D9D9D9] w-12 h-10 flex justify-center items-center cursor-pointer rounded-lg">
+                        <span class="text-[#1F1F1F] text-sm font-normal leading-[17.64px] font-Outifit">Yoga</span>
+                    </p>
+                    <p class="bg-[#D9D9D9] w-[67px] h-10 flex justify-center items-center cursor-pointer rounded-lg">
+                        <span class="text-[#1F1F1F] text-sm font-normal leading-[17.64px] font-Outifit">Cooking</span>
+                    </p>
+                    <p class="bg-[#D9D9D9] w-10 h-10 flex justify-center items-center cursor-pointer rounded-lg">
+                        <span class="text-[#1F1F1F] text-sm font-normal leading-[17.64px] font-Outifit">Run</span>
+                    </p>
+                    <p class="bg-[#D9D9D9] w-[80px] h-10 flex justify-center items-center cursor-pointer rounded-lg">
+                        <span class="text-[#1F1F1F] text-sm font-normal leading-[17.64px] font-Outifit">Swimming</span>
+                    </p>
+                    <p class="bg-[#D9D9D9] w-[37px] h-10 flex justify-center items-center cursor-pointer rounded-lg">
+                        <span class="text-[#1F1F1F] text-sm font-normal leading-[17.64px] font-Outifit">Art</span>
+                    </p>
+                    <p class="bg-[#D9D9D9] w-[74px] h-10 flex justify-center items-center cursor-pointer rounded-lg">
+                        <span class="text-[#1F1F1F] text-sm font-normal leading-[17.64px] font-Outifit">Traveling</span>
+                    </p>
+                    <p class="bg-[#D9D9D9] w-[97px] h-10 flex justify-center items-center cursor-pointer rounded-lg">
+                        <span class="text-[#1F1F1F] text-sm font-normal leading-[17.64px] font-Outifit">Video games</span>
+                    </p>
+                    <p class="bg-[#D9D9D9] w-[51px] h-10 flex justify-center items-center cursor-pointer rounded-lg">
+                        <span class="text-[#1F1F1F] text-sm font-normal leading-[17.64px] font-Outifit">Music</span>
+                    </p>
+                    <p class="bg-[#D9D9D9] w-[69px] h-10 flex justify-center items-center cursor-pointer rounded-lg">
+                        <span class="text-[#1F1F1F] text-sm font-normal leading-[17.64px] font-Outifit">Extreme</span>
+                    </p>
+                    <p class="bg-[#D9D9D9] w-[50px] h-10 flex justify-center items-center cursor-pointer rounded-lg">
+                        <span class="text-[#1F1F1F] text-sm font-normal leading-[17.64px] font-Outifit">Drink</span>
+                    </p>
+                </div>
+            </div>
+            <button  @click="currentPage = 'interest'" class="flex items-center justify-around w-[350px] h-[73px] bg-[#1E212D] absolute top-[600px] left-5 rounded-[44px] mt-[85px]">
+                <p class="text-[28px] font-normal leading-[35.28px] text-white font-Outfit">Continue</p>
+                <img src="./images/Arrow.svg" class="w-10 translate ltr:scale-x-100 rtl:scale-x-[-1]" alt="Arrow">
+            </button>
+        </section>
+
+        <!-- Select Interest Section -->
+        <section x-show="currentPage === 'interest'" class="container m-auto bg-[#F9FEFF] w-[390px] h-[844px] rounded-[55px] relative flex flex-col items-center justify-center">
+            <div class="absolute top-[45px] flex flex-col items-center">
+                <div class="relative w-[216px] h-10">
+                    <input type="search" class="w-full h-full bg-[#D9D9D940] rounded-lg pl-10 focus:outline-none focus:ring-0" placeholder="Search" name="search" id="search">
+                    <img src="./images/primary.svg" alt="Search" class="absolute top-1/2 left-3 transform -translate-y-1/2 w-4 h-4">
+                </div>
+                <div>
+                    <div class="mt-8 flex gap-[29px]">
+                        <div class="flex flex-col items-center justify-center gap-[7px]">
+                            <img src="./images/prof2.webp" class="w-[47px] h-[47px] rounded-[18px] border-[1.5px] border-[#EC5858]" alt="Image">
+                            <p class="text-black text-[10px] font-normal leading-[12.6px]">Ali Ali</p>
+                        </div>
+                        <div class="flex flex-col items-center justify-center gap-[7px]">
+                            <img src="./images/prof3.webp" class="w-[47px] h-[47px] rounded-[18px] border-[1.5px] border-[#EC5858]" alt="Image">
+                            <p class="text-black text-[10px] font-normal leading-[12.6px]">Lorin</p>
+                        </div>
+                        <div class="flex flex-col items-center justify-center gap-[7px]">
+                            <img src="./images/prof.webp" class="w-[47px] h-[47px] rounded-[18px] border-[1.5px] border-[#EC5858]" alt="Image">
+                            <p class="text-black text-[10px] font-normal leading-[12.6px]">Mohi</p>
+                        </div>
+                        <div class="flex flex-col items-center justify-center gap-[7px]">
+                            <img src="./images/prof1.webp" class="w-[47px] h-[47px] rounded-[18px] border-[1.5px] border-[#EC5858]" alt="Image">
+                            <p class="text-black text-[10px] font-normal leading-[12.6px]">Flora</p>
+                        </div>
+                    </div>
+                </div>
+                <p class="bg-[#2D93A91A] w-[98px] h-10 mt-6 flex justify-center items-center cursor-pointer rounded-lg">
+                    <span class="text-[#2D93A9] text-sm font-normal leading-[17.64px] font-Outifit">Photography</span>
+                </p>
+                <div class="mt-8 ">
+                    <div class="relative w-[348.57px] h-[429.05px]">
+                        <div class="absolute top-0 z-20 left-0">
+                            <img src="./images/Rectangle 8.png" class="w-[306.25px] h-[397.44px]" alt="Image">
+                            <img src="./images/aliaa.png" class="absolute rounded-[40px] top-[-3px] left-[-5px] w-[348.57px] h-[429.05px] object-cover" alt="Background">
+                            <div class="absolute inset-0 top-[340px] rounded-[40px]">
+                                <div class="flex items-center justify-around">
+                                    <div>
+                                        <h1 class="text-white font-normal text-lg leading-[22.68px] font-Outfit">Aliaa</h1>
+                                        <h1 class="text-white font-normal text-[10px] leading-[12.6px] font-Outfit">Food Blogger</h1>
+                                    </div>
+                                    <div class="flex gap-3">
+                                        <a href="#"><img src="./images/facebook.svg" alt="facebook"></a>
+                                        <a href="#"><img src="./images/insta.svg" alt="insta"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute top-0 left-5 rotate-6 ">
+                            <img src="./images/Rectangle9.png" class="w-[306.25px] h-[397.44px]" alt="Image">
+                            <img src="./images/maha.png" class="absolute rounded-[40px] top-[-1px] left-[-14px] w-[348.57px] h-[429.05px] object-cover" alt="Background">
+                            <div class="absolute inset-0 top-[340px] rounded-[40px]">
+                                <div class="flex items-center justify-around">
+                                    <div>
+                                        <h1 class="text-white font-normal text-lg leading-[22.68px] font-Outfit">Maha</h1>
+                                        <h1 class="text-white font-normal text-[10px] leading-[12.6px] font-Outfit">Makeup Artist</h1>
+                                    </div>
+                                    <div class="flex gap-3">
+                                        <a href="#"><img src="./images/facebook.svg" alt="facebook"></a>
+                                        <a href="#"><img src="./images/insta.svg" alt="insta"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                
+                
+
+                </div>
+                <div class="flex gap-[13px]">
+                <img src="./images/cross.svg" class="w-20 h-20 cursor-pointer" alt="Close">
+                <img src="./images/like.svg" class="w-20 h-20 cursor-pointer" alt="Like">
+                </div>
+        </section>
+    </div>
+</body>
+</html>
